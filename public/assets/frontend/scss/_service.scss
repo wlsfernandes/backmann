@@ -1,0 +1,429 @@
+
+/* -- 19. Service Section  
+-------------------------*/
+
+// Service # 01
+
+#service-1{
+
+  .single-service-item {
+    padding: 15px;
+    img {
+    border-radius: 10px;
+}
+}
+
+.single-service-item {
+    position: relative;
+}
+
+.service-info-wrap{
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    span {
+      color: #777;
+      margin-bottom: 10px;
+    }
+
+    h5 {
+      font-size: 22px;
+      @media #{$xs}{
+        br{
+          display: none;
+        }
+      }
+    }
+}
+
+.service-info-inner {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+}
+
+.service-wrapper {
+  @media #{$md}{
+    margin-top: 30px;
+  }
+  @media #{$xs}{
+    margin-top: 30px;
+  }
+    
+}
+}
+
+
+// CP Custom Accordion 
+
+.cp-custom-accordion .accordion-items {
+    margin-bottom: 20px;
+    @media #{$xs} {        
+      margin-top: 30px;
+  } 
+  }
+  .cp-custom-accordion .accordion-buttons {    
+    position: relative;
+    width: 100%;
+    padding: 20px 0px 30px 20px;
+    background-color: #fff;
+    text-align: left;
+    font-size: 22px;
+    font-weight: 400;
+    color: #171717;
+    border: none;
+    border-bottom: 1px solid #eee;    
+
+    @media #{$xs}{
+      padding: 10px 0 20px 20px;
+    }
+
+  }
+
+  .cp-custom-accordion .accordion-buttons span {
+    font-size: 15px;
+    margin-right: 15px;
+}
+  
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .cp-custom-accordion .accordion-buttons {
+      padding: 20px 28px;
+      padding-left: 60px;
+    }
+  }
+  @media (max-width: 767px) {
+    .cp-custom-accordion .accordion-buttons {
+      padding-right: 50px;
+      padding-left: 20px;
+      line-height: 25px;
+      font-size: 20px;
+    }
+  }
+
+  .cp-custom-accordion .accordion-buttons::after {
+    position: absolute;
+    content: "\f068";
+    font-family: "Line Awesome Free";
+    top: 25%;
+    right: 30px;
+    font-size: 24px;
+    font-weight: 500;
+    opacity: 1;
+    color: #333;
+  }
+  @media (max-width: 767px) {
+    .cp-custom-accordion .accordion-buttons::after {
+      top: 25%;
+      right: 25px;
+      font-size: 16px;
+    }
+  }
+  .cp-custom-accordion .accordion-buttons.collapsed::after {
+    content: "\f067";
+  }
+  .cp-custom-accordion .collapsed {
+    position: relative;
+    z-index: 9;
+  }
+  .cp-custom-accordion .accordion-body {
+    background-color: #fff;
+    color: #878787;
+    padding: 25px 0;    
+    padding-left: 30px;
+    padding-right: 130px;
+    position: relative;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 28px;
+    z-index: 1;
+  }
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .cp-custom-accordion .accordion-body {
+      padding-right: 25px;
+      padding-bottom: 0;
+    }
+  }
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .cp-custom-accordion .accordion-body {
+      padding-right: 30px;
+      padding-bottom: 0;
+    }
+  }
+  @media (max-width: 767px) {
+    .cp-custom-accordion .accordion-body {
+      padding-right: 20px;
+      padding-left: 20px;
+      font-size: 16px;
+    }
+  }
+  
+
+.cp-custom-accordion {
+  padding-left: 0;
+  @media #{$md} {        
+	margin-top: 30px;
+    padding-left: 0;
+	}
+  @media #{$xs} {        
+	margin-top: 30px;
+    padding-left: 0;
+	}
+}
+
+
+.details-link {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.details-link i {
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+#service-1 .mt-60 {
+  @media #{$xs}{
+    margin-top: 0;
+  }
+    
+}
+
+// Service # 02
+
+#service-2{
+
+  .single-service-item{    
+    padding: 50px;   
+    position: relative;
+    margin-bottom: 30px;
+    @media #{$xs}{
+      padding-left: 0;
+      text-align: center;
+      margin-bottom: 0;
+    } 
+  }
+
+  .border-right {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background: #ddd;
+    transform: translate(0, 0);
+}
+
+  
+
+  .single-service-item img {
+    border-radius: 0;
+    opacity: .9;
+}
+
+.service-title h5 {
+    font-size: 22px;
+    margin: 30px 0 20px;
+}
+
+.single-service-item a.details-link {
+    font-size: 30px;
+    margin-top: 0;
+}
+}
+
+#service-3{
+  .single-service-item{
+    padding: 0;
+    border: 1px solid #fff;
+    position: relative;
+    z-index: 1;
+
+    &:before{
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      opacity: .3;
+    }
+    img{
+      border-radius: 0;
+    }
+  }
+  .service-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.service-info span {
+    color: #ddd;
+}
+
+.service-info h6 {
+    font-size: 22px;
+    color: #fff;
+}
+
+.service-info {
+    padding: 30px;
+}
+}
+
+#service-3 p.pt-40 {
+  @media #{$xs}{
+    padding-top: 0;
+  }
+    
+}
+
+// Service Page 
+
+.service-img-wrap {
+    padding-right: 20px;
+    @media #{$md}{
+      padding-right: 0;
+      height: 400px;
+    }
+    @media #{$xs}{
+      padding-right: 0;
+      height: auto;
+      margin-top: 30px;
+    }
+}
+
+#service-3 .cp-custom-accordion .accordion-body{
+  padding-right: 70px;
+  padding-left: 0;
+   @media #{$xs}{
+    padding-right: 0;
+  }
+}
+
+#service-3 .cp-custom-accordion .accordion-buttons{
+  padding-left: 0;
+}
+
+.service-page .mt-120 {
+  @media #{$md}{
+    margin-top: 0;
+  }
+  @media #{$xs}{
+    margin-top: 0;
+  }
+    
+}
+
+// Service Details
+
+  .service-details-area {
+    background: #f6f6f6;
+}
+
+.feature-img {
+    margin-bottom: 30px;
+    img{
+        width: 100%;
+    }
+}
+
+.service-details-wrap h3 {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 40px;
+    margin: 20px 0;
+}
+
+.service-details-wrap h5 {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 40px;
+    margin: 20px 0;
+}
+
+.service-details-wrap p {
+    text-align: justify;
+}
+
+.service-details-img {
+    margin-bottom: 30px;
+}
+
+.sidebar-wrap {
+    padding: 45px 35px;
+    position: sticky;
+    top: 100px;
+    transition: top 0.3s ease;
+    @media #{$xs}{
+        padding: 45px 30px;
+    }
+    h5 {
+        font-size: 20px;
+        font-weight: 600;
+    }
+    input, textarea {
+        border: none;
+        border-bottom: 1px solid #ddd;
+        padding-left: 0;
+    }
+    textarea {
+        height: 150px;
+        
+    }
+    form {
+        margin-top: 30px;
+    }
+}
+
+.sidebar-wrap input[type="submit"] {
+    width: 180px;
+    margin-top: 30px;
+}
+
+.contact-info {
+    margin-top: 50px;
+}
+
+.contact-list-item {
+    margin-top: 20px;
+    li {
+        position: relative;
+        padding-left: 40px;
+        margin-bottom: 20px;
+        font-size: 17px;
+        i {
+            position: absolute;
+            top: 2px;
+            left: 0;
+            font-size: 24px;
+            color: $theme_color;
+        }
+    }
+}
+
+.service-page {
+
+    .play-btn a i {
+        font-size: 30px;
+        color: #fff;
+    }
+    
+    .play-btn {
+        background: $theme_color;
+        width: 90px;
+        height: 90px;
+    }
+
+}

@@ -1,0 +1,227 @@
+/* -- 22. Process Section 
+---------------------- */
+
+#process-1{
+    .process-bg-wrap {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 450px;
+    padding: 0 60px;
+    position: relative;
+    z-index: 1;
+
+    @media #{$md}{
+        height: 750px;
+    }
+    @media #{$xs}{
+        height: auto;
+    }
+
+    &:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    background: #0000009E;
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+    z-index: -1;
+}
+}
+
+.single-process-item {
+    text-align: center;
+    padding: 30px;
+    @media #{$xs}{
+        padding: 30px 0;
+    }
+}
+
+.process-icon img {
+    width: 40px;
+    border-radius: 0;
+}
+
+.process-title h5 {
+    color: #fff;
+    margin: 30px 0 20px;
+    font-size: 22px;
+    @media #{$lg}{
+        font-size: 20px;
+    }
+}
+
+.process-icon {
+    display: inline-block;
+    border: 1px solid #ddd;
+    padding: 40px;
+    border-radius: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+span.step-count {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    background: #D3D3D32E;
+    color: #fff;
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.process-line {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 25%;
+    width: 100%;
+    background: #f7f7f7;
+    transform: translate(100%, 0);
+    height: 1px;
+}
+
+.process-content p {
+    color: #fff;
+    font-size: 15px;
+    line-height: 25px;
+    margin: 0;
+    
+}
+}  
+
+// Process # 02
+
+#process-2{
+
+.single-process-wrap {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 60px;
+    @media #{$xs}{
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.process-icon {
+    flex: 0 0 120px;
+    width: 120px;
+    height: 120px;
+    background: #f6f6f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+}
+
+span.step-count {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    background: #000;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.process-icon img {
+    width: 50px;
+    height: 50px;
+    border-radius: 0;
+}
+
+.process-title h5 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.process-text p {
+    margin: 0;
+}
+
+}
+
+// Process # 03
+
+#process-3{
+    
+.single-process-item {
+    text-align: center;
+    padding: 30px;
+}
+
+.process-icon img {
+    width: 60px;
+    border-radius: 0;
+}
+
+.process-title h5 {
+    margin: 30px 0 20px;
+    font-size: 22px;
+}
+
+.process-icon {
+    display: inline-block;    
+    padding: 35px;
+    position: relative;
+    z-index: 1;
+}
+
+span.step-count {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    background: #000;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.process-content p {
+    font-size: 15px;
+    line-height: 25px;
+    margin: 0;
+    
+}
+
+.process-line {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 25%;
+    width: 100%;
+    background: #00000075;
+    transform: translate(100%, 0);
+    height: 1px;
+    @media #{$md}{
+        left: 50%;
+    }
+}
+
+}  
+
+#process-3 p.pt-40 {
+	@media #{$xs} {
+		padding-top: 0;
+	}
+
+}
+

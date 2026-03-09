@@ -1,0 +1,167 @@
+/* -- 24. Team Section  
+----------------------*/
+
+.single-team-item {
+    position: relative;
+    z-index: 1;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.team-info {
+    margin-top: 10px;
+}
+
+.team-info span {
+    color: #777;
+}
+
+// Team # 02
+
+#team-2 {
+    &.team-section {
+        height: 700px;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        position: relative;
+        z-index: 1;
+
+        @media #{$xs}{
+            height: auto;
+        }
+
+        &:before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000000BF;
+            opacity: 0.8;
+            z-index: -1;
+        }
+    }
+
+    .team-intro-wrap {
+        padding-top: 30px;
+        padding-right: 80px;
+    }
+
+    .section-title h2 {
+        font-size: 45px;
+        font-weight: 400;
+        line-height: 50px;
+    }
+
+    .team-content-wrap {
+        padding-left: 60px;
+        @media #{$md}{
+            padding-left: 0;
+        }
+        @media #{$xs}{
+            padding-left: 0;
+            margin-top: 60px;
+        }
+    }
+
+    .single-team-wrap {
+        position: relative;
+        z-index: 1;
+        @media #{$md}{
+            margin-bottom: 30px;
+        }
+        @media #{$xs}{
+            margin-bottom: 30px;
+        }
+
+        &:hover {
+            .team-info {
+                transform: translateY(0)
+            }
+        }
+    }
+
+    .team-img {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .team-info {
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        background: #000;
+        width: 100%;
+        padding: 30px 30px 20px;
+        transform: translateY(100%);
+        transition: transform .4s cubic-bezier(.22, .61, .36, 1);
+
+        h6 {
+            font-size: 18px;
+            color: #fff;
+        }
+
+        p {
+            margin: 0;
+        }
+    }
+
+
+}
+
+// Team # 03
+
+#team-3 {
+
+    .single-team-wrap {
+        position: relative;
+        z-index: 1;
+
+        &:hover {
+            .team-info {
+                transform: translateY(0)
+            }
+        }
+        @media #{$md}{
+            padding: 15px;
+        }
+        @media #{$xs}{
+            padding: 15px;
+        }
+    }
+
+    .team-img {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .team-info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: #000;
+        width: 100%;
+        padding: 30px 30px 20px;
+        transform: translateY(100%);
+        transition: transform .4s cubic-bezier(.22, .61, .36, 1);
+
+        h6 {
+            font-size: 18px;
+            color: #fff;
+        }
+
+        p {
+            margin: 0;
+        }
+    }
+
+}
+
+#team-3 p.pt-40 {
+    @media #{$xs}{
+        padding-top: 0;
+    }
+    
+}

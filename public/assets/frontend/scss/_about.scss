@@ -1,0 +1,235 @@
+
+/* -- 20. About Section 
+-----------------------*/ 
+
+// About # 01
+
+#about-1 {
+
+    &.about-section {
+        .about-img-wrap {
+            padding-right: 60px;
+        }
+
+        .cp-custom-accordion .accordion-buttons {
+            padding: 20px 0px 30px 30px;
+
+            @media #{$lg} {
+                padding: 20px 0 20px 30px;
+            }
+        }
+
+        .cp-custom-accordion .accordion-items {
+            margin-bottom: 0px;
+
+            @media #{$xs} {
+                margin-top: 0px;
+            }
+
+            border: 1px solid #ddd;
+            border-bottom: none;
+        }
+
+        .cp-custom-accordion .accordion-body {
+            padding-right: 60px;
+            border-bottom: 1px solid #ddd;
+
+        }
+    }
+
+    .about-img-wrap {
+        @media #{$md} {
+            margin-top: 30px;
+        }
+
+        @media #{$xs} {
+            margin-top: 30px;
+        }
+
+    }
+}
+
+// About # 02
+
+#about-2 {
+    .about-tab {
+        padding-left: 60px;
+
+        @media #{$md} {
+            padding-left: 0;
+            margin-top: 60px;
+        }
+
+        @media #{$xs} {
+            padding-left: 0;
+            margin-top: 30px;
+        }
+    }
+
+    .about-tab .nav-tabs {
+        border-bottom: none;
+    }
+
+    .about-tab .nav-item {
+        margin-right: 40px;
+    }
+
+    .about-tab .nav-link {
+        border: none;
+        font-size: 20px;
+        color: #00000073;
+        padding: 0 0 5px;
+    }
+
+    .about-tab .nav-link.active {
+        color: $text_dark;
+        border-bottom: 2px solid $text_dark;
+    }
+}
+
+#about-2 p.pt-60 {
+    @media #{$xs} {
+        padding-top: 0;
+    }
+
+}
+
+// About # 03
+
+#about-3.about-section {
+    position: relative;
+}
+
+#about-3 {
+
+    .about-content-wrap {
+        width: 50%;
+        padding-right: 80px;
+
+        @media #{$md} {
+            width: 100%;
+        }
+
+        @media #{$xs} {
+            width: 100%;
+            padding-right: 0;
+        }
+    }
+
+    .about-tab {
+        @media #{$xs} {
+            margin-top: 30px;
+
+        }
+    }
+
+    .about-tab .nav-tabs {
+        border-bottom: none;
+    }
+
+    .about-tab .nav-item {
+        margin-right: 40px;
+    }
+
+    .about-tab .nav-link {
+        border: none;
+        font-size: 20px;
+        color: #00000073;
+        padding: 0 0 5px;
+    }
+
+    .about-tab .nav-link.active {
+        color: $text_dark;
+        border-bottom: 2px solid $text_dark;
+    }
+
+    .video-content-wrap {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        overflow: hidden;
+        width: 50%;
+        height: 100%;
+
+        @media #{$md} {
+            width: 100%;
+            position: static;
+            margin-top: 60px;
+        }
+
+        @media #{$xs} {
+            width: 100%;
+            position: static;
+            margin-top: 60px;
+        }
+    }
+
+    .video-content-wrap video {
+        width: 100%;
+        height: 750px;
+        object-fit: cover;
+
+        @media #{$xs} {
+            height: 300px;
+        }
+
+    }
+}
+
+// About Page 
+
+#about-page {
+
+    .about-content-wrap {
+        padding-right: 90px;
+
+        @media #{$md} {
+            padding-right: 0;
+        }
+
+        @media #{$xs} {
+            padding-right: 0;
+            margin-top: 20px;
+        }
+    }
+
+    .about-img-wrap {
+        @media #{$md} {
+            margin-top: 30px;
+        }
+    }
+
+    .about-content-wrap.obverse {
+        padding: 80px 80px 0 80px;
+
+        @media #{$md} {
+            padding: 0;
+            padding-left: 10px;
+        }
+    }
+
+    .about-content-wrap.reverse {
+        padding: 120px 130px 0 0;
+    }
+
+    
+    
+
+}
+
+.about-more .mt-40 {
+        @media #{$md} {
+            margin-top: 20px;
+        }
+        @media #{$xs} {
+            margin-top: 20px;
+        }
+
+    }
+
+.about-more h4 {
+        @media #{$xs} {
+            font-size: 20px;
+        }
+
+    }

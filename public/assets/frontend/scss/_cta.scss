@@ -1,0 +1,23 @@
+
+/* 26. CTA CSS 
+-------------*/
+
+// CTA # 01
+
+.cta-text-wrap h1 {
+    font-size: 80px;
+    font-weight: 300;
+    @media #{$md}{
+        font-size: 70px;
+    }
+    @media #{$xs}{
+        font-size: 40px;
+    }
+}
+
+// CTA # 02
+
+.cta-section-two {
+    background-size: cover;
+    background-position: center;
+}

@@ -1,0 +1,153 @@
+
+/* ------ 18. Hero Area ------ */
+
+// Hero Area # 01 & 02
+
+#home-1, #home-2 {
+    .single-slide-item {
+        background-image: url(../img/slider/slide-1.jpg);
+        background-size: cover;
+        background-position: center;
+        background-color: #ddd;
+        color: #fff;
+        width: 100%;
+        height: 800px;
+        position: relative;
+        z-index: 1;   
+         @media #{$xs} {            
+            height: 700px;
+        }     
+    }
+
+    .hero-area-content {
+        padding-top: 80px;
+        padding-left: 80px;
+        @media #{$md}{
+            padding-left: 0;
+            padding-top: 60px;
+        }
+        @media #{$xs}{
+            padding-left: 0;
+            padding-top: 60px;
+        }
+    }
+  
+}
+
+#home-1 p.text-white br {
+    @media #{$xs}{
+        display: none;
+    }
+    
+}
+
+// Slider Nav Style 
+
+
+.homepage-slides .owl-nav button.owl-prev,
+.homepage-slides .owl-nav button.owl-next {
+	width: 50px;
+	height: 50px;
+	border: 2px solid;
+	font-size: 20px;
+	font-weight: 100;
+	line-height: 16px;
+	position: absolute;
+	left: 15px;
+	top: 50%;
+	margin-top: -25px;
+	color: $theme_color;
+	border-radius: 50%;
+	visibility: hidden;
+	opacity: 0;
+	-webkit-transition: all .3s ease-out 0s;
+	transition: all .3s ease-out 0s;
+}
+
+.homepage-slides .owl-nav button.owl-next {
+	left: auto;
+	right: 15px;
+}
+
+.homepage-slides:hover .owl-nav button.owl-prev,
+.homepage-slides:hover .owl-nav button.owl-next {
+	visibility: visible;
+	opacity: .3;
+}
+
+.homepage-slides .owl-nav button.owl-prev:hover,
+.homepage-slides .owl-nav button.owl-next:hover {
+	background: $theme_color;
+	color: #fff;
+	border-color: $theme_color;
+	opacity: 1;
+}
+
+#home-2{
+    .section-title h1{
+        font-size: 65px;
+        line-height: 75px;
+        @media #{$xs}{
+            font-size: 35px;
+            line-height: 40px;
+            br{
+                display: none;
+            }
+        }
+    }
+
+    p{
+        @media #{$xs}{
+            br {
+                display: none;
+            }
+            
+        }
+
+    }
+
+}
+
+// Hero Area # 03
+
+#home-3{
+  .hero-slider-wrap {    
+    height:100%;
+
+}
+.single-slider-item img {
+    height: 600px;
+    @media #{$xs}{
+        height: auto;
+    }
+}
+
+.hero-content-wrap {
+    padding-left: 60px;
+    padding-right: 70px;
+    @media #{$lg}{
+        padding-left: 30px;
+        padding-right: 0;
+    }
+
+    @media #{$md}{
+        padding-left: 60px;
+        padding-right: 60px;
+        margin-top: 60px;
+    }
+    @media #{$xs}{
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-top: 30px;
+    }
+}
+.section-title h2{
+    font-size: 50px;
+    line-height: 55px;
+    text-transform: uppercase;
+    @media #{$xs}{
+        font-size: 35px;
+        line-height: 45px;
+    }
+}
+}

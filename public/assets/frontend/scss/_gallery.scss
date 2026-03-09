@@ -1,0 +1,17 @@
+
+/* 30. Gallery Section CSS  
+-------------------------*/
+
+.gallery-section.showcase img {
+    height: 350px;
+    object-fit: cover;
+}
+
+.gallery-section.showcase.section-padding h3 {
+    font-size: 50px;
+}
+
+.gallery-section.showcase.section-padding p {
+    font-size: 20px;
+    margin-top: 15px;
+}
