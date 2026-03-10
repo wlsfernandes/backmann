@@ -35,15 +35,15 @@
                 <div class="contact-info-wrap mt-40">
                     <div class="single-contact-info wow fadeInUp animated" data-wow-delay="200ms">
                         <h6 class="text-white">{{ __('home.contact_phone') }}</h6>
-                        <p class="p-xl">{{ $setting->contact_phone }}</p>
+                        <p class="p-xl">{{ $setting->contact_phone ?? '' }}</p>
                     </div>
                     <div class="single-contact-info wow fadeInUp animated" data-wow-delay="400ms">
                         <h6 class="text-white">{{ __('home.contact_email') }}</h6>
-                        <p>{{ $setting->contact_email }}</p>
+                        <p>{{ $setting->contact_email ?? ''}}</p>
                     </div>
                     <div class="single-contact-info wow fadeInUp animated" data-wow-delay="600ms">
                         <h6 class="text-white">{{ __('home.contact_directions') }}</h6>
-                        <p>{{ $setting->address }}</p>
+                        <p>{{ $setting->address ?? ''}}</p>
                     </div>
                 </div>
             </div>
@@ -54,7 +54,7 @@
 <div class="footer-bottom">
     <div class="row align-items-center justify-content-center">
         <div class="site-info text-center">
-            <p class="mb-0">Copyright © {{ date('Y') }} {{ $setting->company_name }} - All rights reserved.</p>
+            <p class="mb-0">Copyright © {{ date('Y') }} {{ $setting->company_name ?? ''}} - All rights reserved.</p>
         </div>
     </div>
 </div>

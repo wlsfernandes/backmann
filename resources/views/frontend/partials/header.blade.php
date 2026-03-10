@@ -37,7 +37,7 @@
 
                     <!-- Logo -->
                     <div class="logo">
-                        @if ($setting->image_url)
+                        @if ($setting && $setting->image_url)
                             <img src="{{ route('admin.images.preview', ['model' => 'settings', 'id' => $setting->id]) }}"
                                 alt="Banner image" style="width:198px;height:64px">
                         @else
@@ -78,7 +78,7 @@
                                 <i class="las la-phone-volume"></i>
                             </div>
                             <div class="title">
-                                <h4>{{ $setting->contact_phone }}</h4>
+                                <h4>{{ $setting->contact_phone  ?? ''}}</h4>
                             </div>
                         </div>
 

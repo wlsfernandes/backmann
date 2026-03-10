@@ -37,9 +37,9 @@
               <td class="d-flex justify-content-center align-items-center">
                 <div class="d-flex flex-column align-items-center justify-content-center">
                   @if ($about->image_url)
-                    <a href="{{route('admin.images.preview', ['model' => 'about', 'id' => $about->id]) }}"
+                    <a href="{{route('admin.images.preview', ['model' => 'abouts', 'id' => $about->id]) }}"
                       target="_blank" title="View image">
-                      <img src="{{route('admin.images.preview', ['model' => 'about', 'id' => $about->id]) }}"
+                      <img src="{{route('admin.images.preview', ['model' => 'abouts', 'id' => $about->id]) }}"
                         alt="About image" class="rounded-circle mb-1" style="width:80px;height:80px;object-fit:cover;">
                     </a>
                   @else
@@ -49,7 +49,7 @@
                     </div>
                   @endif
 
-                  <a href="{{route('admin.images.edit', ['model' => 'about', 'id' => $about->id]) }}"
+                  <a href="{{route('admin.images.edit', ['model' => 'abouts', 'id' => $about->id]) }}"
                     class="text-primary small" title="Upload / Change image">
                     <i class="uil uil-edit"></i> Edit
                   </a>
@@ -68,7 +68,7 @@
               {{-- Published --}}
               <td class="text-center">
                 <form method="POST"
-                  action="{{route('admin.publish.toggle', ['model' => 'about', 'id' => $about->id]) }}">
+                  action="{{route('admin.publish.toggle', ['model' => 'abouts', 'id' => $about->id]) }}">
                   @csrf
                   @method('PATCH')
 
