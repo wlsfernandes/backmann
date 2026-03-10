@@ -13,17 +13,17 @@ use Throwable;
 class ImageUploadController extends BaseController
 {
     protected array $models = [
-        'abouts'                => \App\Models\About::class,
-        'events'               => \App\Models\Event::class,
-        'blogs'                => \App\Models\Blog::class,
-        'banners'              => \App\Models\Banner::class,
-        'donations'            => \App\Models\Donation::class,
-        'projects'             => \App\Models\Project::class,
-        'project-images'       => \App\Models\ProjectImage::class,
-        'sections'             => \App\Models\Section::class,
-        'resources'            => \App\Models\Resource::class,
-        'services'             => \App\Models\Service::class,
-        'settings'             => \App\Models\Setting::class,
+        'abouts' => \App\Models\About::class,
+        'events' => \App\Models\Event::class,
+        'blogs' => \App\Models\Blog::class,
+        'banners' => \App\Models\Banner::class,
+        'donations' => \App\Models\Donation::class,
+        'projects' => \App\Models\Project::class,
+        'project-images' => \App\Models\ProjectImage::class,
+        'sections' => \App\Models\Section::class,
+        'resources' => \App\Models\Resource::class,
+        'services' => \App\Models\Service::class,
+        'settings' => \App\Models\Setting::class,
 
         // add more models here
     ];
@@ -38,17 +38,17 @@ class ImageUploadController extends BaseController
         abort_if(! $instance->image_url, 404);
 
         $client = new S3Client([
-            'version'     => 'latest',
-            'region'      => config('filesystems.disks.s3.region'),
+            'version' => 'latest',
+            'region' => config('filesystems.disks.s3.region'),
             'credentials' => [
-                'key'    => config('filesystems.disks.s3.key'),
+                'key' => config('filesystems.disks.s3.key'),
                 'secret' => config('filesystems.disks.s3.secret'),
             ],
         ]);
 
         $cmd = $client->getCommand('GetObject', [
             'Bucket' => config('filesystems.disks.s3.bucket'),
-            'Key'    => $instance->image_url,
+            'Key' => $instance->image_url,
         ]);
 
         $request = $client->createPresignedRequest($cmd, '+10 minutes');
@@ -62,15 +62,26 @@ class ImageUploadController extends BaseController
 
         return view('admin.images.edit', [
             'modelKey' => $model,
-            'model'    => $instance,
-            'image'    => $instance->image_url,
+            'model' => $instance,
+            'image' => $instance->image_url,
         ]);
     }
 
+    /*
+            |--------------------------------------------------------------------------
+            | Image Upload & Processing
+            | - Validates image type and size
+            | - Uses presets for consistent dimensions/quality
+            | - Deletes old image from S3 if exists
+            | - Uploads new image as WebP to S3
+            | - Updates model with new image URL
+            | - Logs any exceptions for debugging
+            |--------------------------------------------------------------------------
+            */
     public function update(Request $request, string $model, int $id)
     {
         $request->validate([
-            'image'      => 'required|image|max:5120',
+            'image' => 'required|image|max:5120',
             'image_type' => 'required|in:logo,banner,blog_social,event_header,card,square,original_fit',
         ]);
 
@@ -81,51 +92,51 @@ class ImageUploadController extends BaseController
             $preset = match ($request->input('image_type')) {
 
                 'logo' => [
-                    'mode'    => 'contain', // keep full image
-                    'width'   => 600,
-                    'height'  => 300,
+                    'mode' => 'contain', // keep full image
+                    'width' => 600,
+                    'height' => 300,
                     'quality' => 90,
                 ],
 
                 'banner' => [
-                    'mode'    => 'cover',
-                    'width'   => 1920,
-                    'height'  => 600,
+                    'mode' => 'cover',
+                    'width' => 1920,
+                    'height' => 600,
                     'quality' => 85,
                 ],
 
                 'blog_social' => [
-                    'mode'    => 'cover',
-                    'width'   => 1200,
-                    'height'  => 630,
+                    'mode' => 'cover',
+                    'width' => 1200,
+                    'height' => 630,
                     'quality' => 85,
                 ],
 
                 'event_header' => [
-                    'mode'    => 'cover',
-                    'width'   => 1200,
-                    'height'  => 500,
+                    'mode' => 'cover',
+                    'width' => 1200,
+                    'height' => 500,
                     'quality' => 85,
                 ],
 
                 'card' => [
-                    'mode'    => 'cover',
-                    'width'   => 900,
-                    'height'  => 600,
+                    'mode' => 'cover',
+                    'width' => 900,
+                    'height' => 600,
                     'quality' => 85,
                 ],
 
                 'square' => [
-                    'mode'    => 'cover',
-                    'width'   => 800,
-                    'height'  => 800,
+                    'mode' => 'cover',
+                    'width' => 800,
+                    'height' => 800,
                     'quality' => 85,
                 ],
 
                 default => [ // original_fit
-                    'mode'    => 'contain',
-                    'width'   => 1600,
-                    'height'  => 1600,
+                    'mode' => 'contain',
+                    'width' => 1600,
+                    'height' => 1600,
                     'quality' => 85,
                 ],
             };
@@ -133,7 +144,7 @@ class ImageUploadController extends BaseController
             DB::transaction(function () use ($request, $instance, $model, $preset) {
 
                 // Delete old image if exists
-                if (!empty($instance->image_url)) {
+                if (! empty($instance->image_url)) {
                     S3::delete($instance->image_url);
                 }
 
@@ -163,7 +174,7 @@ class ImageUploadController extends BaseController
                 'error',
                 'images.update.failed',
                 [
-                    'model'     => $model,
+                    'model' => $model,
                     'exception' => $e->getMessage(),
                 ]
             );
@@ -202,8 +213,8 @@ class ImageUploadController extends BaseController
                 'error',
                 'images.delete.failed',
                 [
-                    'model'     => $model,
-                    'model_id'  => $id,
+                    'model' => $model,
+                    'model_id' => $id,
                     'exception' => $e->getMessage(),
                 ]
             );
