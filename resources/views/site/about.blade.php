@@ -27,7 +27,7 @@
                     </div>
                     <div class="col-xl-5 col-lg-5 order-1 order-md-2">
                         <div class="about-img-wrap">
-                            <img src="{{ route('admin.images.preview', ['model' => 'about', 'id' => $about->id]) }}"
+                            <img src="{{ route('admin.images.preview', ['model' => 'abouts', 'id' => $about->id]) }}"
                                 alt="{{ $about->title() }}">
                         </div>
                     </div>
