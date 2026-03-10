@@ -2,7 +2,7 @@
 
 @section('title', 'About Pages')
 @section('css')
-  <link href="{{ asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/libs/datatables/datatables.min.css') }}" rel="stylesheet">
 @endsection
 @section('content')
   <div class="card border border-primary">
