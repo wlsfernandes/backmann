@@ -8,7 +8,9 @@
                     <div class="section-title">
 
                         <h2 class="text-white visible-slowly-right">
-                            {{ __('home.footer_cta_title') }}
+                            <div class="cms-html">
+                                {!! __('home.footer_cta_title') !!}
+                            </div>
                         </h2>
 
                     </div>
@@ -16,13 +18,17 @@
                     <hr>
 
                     <p class="text-white wow fadeInUp animated" data-wow-delay="400ms">
-                        {{ __('home.footer_cta_description') }}
+                    <div class="cms-html">
+                        {!! __('home.footer_cta_description') !!}
+                    </div>
                     </p>
 
                     <a href="{{ url('contact') }}" class="white-btn mt-20 wow fadeInDown animated"
                         data-wow-delay="600ms">
 
-                        {{ __('home.footer_cta_button') }}
+                        <div class="cms-html">
+                            {!! __('home.footer_cta_button') !!}
+                        </div>
                         <i class="fa-light fa-arrow-right"></i>
 
                     </a>
@@ -39,11 +45,11 @@
                     </div>
                     <div class="single-contact-info wow fadeInUp animated" data-wow-delay="400ms">
                         <h6 class="text-white">{{ __('home.contact_email') }}</h6>
-                        <p>{{ $setting->contact_email ?? ''}}</p>
+                        <p>{{ $setting->contact_email ?? '' }}</p>
                     </div>
                     <div class="single-contact-info wow fadeInUp animated" data-wow-delay="600ms">
                         <h6 class="text-white">{{ __('home.contact_directions') }}</h6>
-                        <p>{{ $setting->address ?? ''}}</p>
+                        <p>{{ $setting->address ?? '' }}</p>
                     </div>
                 </div>
             </div>
@@ -54,7 +60,8 @@
 <div class="footer-bottom">
     <div class="row align-items-center justify-content-center">
         <div class="site-info text-center">
-            <p class="mb-0">Copyright © {{ date('Y') }} {{ $setting->company_name ?? ''}} - All rights reserved.</p>
+            <p class="mb-0">Copyright © {{ date('Y') }} {{ $setting->company_name ?? '' }} - All rights reserved.
+            </p>
         </div>
     </div>
 </div>
